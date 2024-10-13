@@ -1,14 +1,8 @@
 Numero do Pedido: 1
-Nome do Solicitante: josefa
-Tipo de Solicitante: Funcionário
-Quantidade de Páginas: 96
-Data do Pedido: 12/10/2024
-Status do Pedido: Pendente
------------------------------------
-Numero do Pedido: 2
-Nome do Solicitante: acdevew
-Tipo de Solicitante: Aluno
-Quantidade de Páginas: 741
-Data do Pedido: 12/10/2024
+Nome do Solicitante: msdca
+Tipo de Solicitante: Professor
+Quantidade de Páginas: 10
+Valor Total: 1.00
+Data do Pedido: 13/10/2024
 Status do Pedido: Pendente
 -----------------------------------

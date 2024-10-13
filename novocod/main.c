@@ -14,8 +14,8 @@ int main(){
         printf("1. Adicionar pedido\n");
         printf("2. Listar pedidos\n");
         printf("3. Excluir pedido\n");
-        printf("4. Buscar pedido por número ou nome\n");
-        printf("5. Editar pedido\n");
+        printf("4. Editar pedido\n");
+        printf("5. Buscar pedido por número ou nome\n");
         printf("6. Consultar pedidos por status\n");
         printf("7. Consultar total de cópias e valor arrecadado\n");
         printf("8. Sair\n\n");
@@ -28,9 +28,14 @@ int main(){
                 salvarPedidoNoArquivo(listaPedidos, nomeArquivo);
                 break;
             case 2:
-                listarPedidos(listaPedidos);
+                exibirPedidos(listaPedidos);
+                break;
             case 3:
                 excluirPedido(&listaPedidos);
+                salvarPedidoNoArquivo(listaPedidos, nomeArquivo);
+                break;
+            case 4: 
+                editarPedido(listaPedidos);
                 salvarPedidoNoArquivo(listaPedidos, nomeArquivo);
                 break;
             default:

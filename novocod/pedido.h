@@ -18,33 +18,50 @@ typedef struct Pedido{
     struct Pedido * proximo;
 } Pedido;
 
+// Função para capturar e validar a entrada
+int obterOpcaoMenu();
+
 // Função para obter a data atual dd/mm/yyyy
 void obterData(char *data); 
 
-int obterOpcaoMenu();
-
+// Função para verificar se a string contém apenas letras
 int apenasLetras(const char *str);
 
+// Função para verificar se a string contém apenas números
 int apenasNumeros(const char *str);
 
+// Função para obter uma entrada apenas com caracteres
 void obterEntradaApenasCaracteres(char *buffer, int tamanho, const char *prompt);
 
+// Função para obter o tipo de solicitante
 void obterTipoSolicitante(Pedido *pedido);
 
+// Função para obter a quantidade de páginas
 void obterQuantidadePaginas(int *quantidade);
+
+// Função para obter o novo status do pedido
+void obterNovoStatus(char *status);
+
+// Função para salvar pedidos no arquivo
+void salvarPedidoNoArquivo(Pedido* lista, const char* nomeArquivo);
 
 // Carrega os pedidos existentes do arquivo
 void carregarPedidosDoArquivo(Pedido** lista, const char* nomeArquivo);
 
-void salvarPedidoNoArquivo(Pedido* lista, const char* nomeArquivo);
-
 // Função para inserir um pedido na lista encadeada
 void inserirPedidoNaLista(Pedido** lista, Pedido* novoPedido);
 
-void adicionarPedido(Pedido** listaPedido);
+// Função para adicionar um pedido
+void adicionarPedido(Pedido** lista);
 
 // Função para listar os pedidos
-void listarPedidos(Pedido *lista);
+void exibirPedidos(Pedido *lista);
 
 // Função para excluir um pedido e atualizar os números
 void excluirPedido(Pedido** lista);
+
+// Função para editar um pedido 
+void editarPedido(Pedido *lista);
+
+// Função para buscar pedido por número ou nome
+void buscarPedido(Pedido * lista);
