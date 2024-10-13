@@ -38,6 +38,13 @@ int main(){
                 editarPedido(listaPedidos);
                 salvarPedidoNoArquivo(listaPedidos, nomeArquivo);
                 break;
+            case 5:
+                buscarPedido(listaPedidos);
+                break;
+            case 8:
+                salvarPedidoNoArquivo(listaPedidos, nomeArquivo);
+                printf("Saindo...\n");
+                break;
             default:
                 printf("Opção inválida!\n");
         }

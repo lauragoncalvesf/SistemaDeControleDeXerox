@@ -1,8 +1,16 @@
-Numero do Pedido: 1
-Nome do Solicitante: msdca
-Tipo de Solicitante: Professor
-Quantidade de Páginas: 10
-Valor Total: 1.00
-Data do Pedido: 13/10/2024
-Status do Pedido: Pendente
+Numero do pedido: 1
+Nome do solicitante: julia
+Tipo de solicitante: Funcionário
+Quantidade de páginas: 4
+Valor total: 0.40
+Data do pedido: 13/10/2024
+Status do pedido: Pendente
+-----------------------------------
+Numero do pedido: 2
+Nome do solicitante: maria
+Tipo de solicitante: Aluno
+Quantidade de páginas: 80
+Valor total: 0.60
+Data do pedido: 13/10/2024
+Status do pedido: Concluído
 -----------------------------------

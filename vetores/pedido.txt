@@ -71,18 +71,18 @@ Valor Total: 0.40
 Status: Pendente
 
 Número: 10
-Nome do Solicitante: !d
-Tipo de Solicitante: Professor
-Quantidade de Páginas: 3
-Data do Pedido: 11/10/2024
-Valor Total: 0.60
-Status: Pendente
-
-Número: 11
 Nome do Solicitante: db
 Tipo de Solicitante: Professor
 Quantidade de Páginas: 5
 Data do Pedido: 11/10/2024
 Valor Total: 1.00
+Status: Pendente
+
+Número: 11
+Nome do Solicitante: marcelo
+Tipo de Solicitante: Aluno
+Quantidade de Páginas: 10
+Data do Pedido: 11/10/2024
+Valor Total: 2.00
 Status: Pendente
 

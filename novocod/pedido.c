@@ -179,23 +179,22 @@ void carregarPedidosDoArquivo(Pedido** lista, const char* nomeArquivo) {
     Pedido* novoPedido;
     while (1) {
         novoPedido = (Pedido*) malloc(sizeof(Pedido));
-        if (fscanf(arquivo, "Numero do Pedido: %d\n", &novoPedido->numero) != 1) {
+        if (fscanf(arquivo, "Numero do pedido: %d\n", &novoPedido->numero) != 1) {
             free(novoPedido);
             break; // Para caso não conseguir ler o número, sai do loop
         }
-        fscanf(arquivo, "Nome do Solicitante: %[^\n]\n", novoPedido->nomeSolicitante);
-        fscanf(arquivo, "Tipo de Solicitante: %[^\n]\n", novoPedido->tipoSolicitante);
-        fscanf(arquivo, "Quantidade de Páginas: %d\n", &novoPedido->quantidadePaginas);
-        fscanf(arquivo, "Valor Total: %f\n", &novoPedido->valorTotal);
-        fscanf(arquivo, "Data do Pedido: %[^\n]\n", novoPedido->dataPedido);
-        fscanf(arquivo, "Status do Pedido: %[^\n]\n", novoPedido->status);
+        fscanf(arquivo, "Nome do solicitante: %[^\n]\n", novoPedido->nomeSolicitante);
+        fscanf(arquivo, "Tipo de solicitante: %[^\n]\n", novoPedido->tipoSolicitante);
+        fscanf(arquivo, "Quantidade de páginas: %d\n", &novoPedido->quantidadePaginas);
+        fscanf(arquivo, "Valor total: %f\n", &novoPedido->valorTotal);
+        fscanf(arquivo, "Data do pedido: %[^\n]\n", novoPedido->dataPedido);
+        fscanf(arquivo, "Status do pedido: %[^\n]\n", novoPedido->status);
         fscanf(arquivo, "-----------------------------------\n"); // Ignora a linha separadora
 
         // Insere o pedido na lista
         novoPedido->proximo = NULL; // Inicializa o próximo como NULL
         inserirPedidoNaLista(lista, novoPedido);
     }
-
     fclose(arquivo);
 }
 
@@ -390,7 +389,7 @@ void editarPedido(Pedido *lista) {
     printf("Edição concluída com sucesso!\n");
 }
 
-/*
+
 void buscarPedido(Pedido * lista){
     if(lista == NULL){
         printf("Nenhum pedido encontrado!\n");
@@ -402,11 +401,53 @@ void buscarPedido(Pedido * lista){
     Pedido *atual = lista;
 
     printf("\nDigite o número ou nome do solicitante: ");
-    if (apenasNumeros(entrada)) {
-            opcao = atoi(entrada); // Converte para inteiro
-        } else {
-            printf("Entrada inválida! Digite apenas números.\n");
-            continue; // Repete o loop se a entrada for inválida
-        }
+    scanf(" %[^\n]", entrada);
+    getchar();
 
-}*/
+    if (apenasNumeros(entrada)) {
+        numeroPedido = atoi(entrada);
+        while(atual != NULL){
+            if(atual->numero == numeroPedido){
+                printf("\nPedido #%d\n", atual->numero);
+                printf("Solicitante: %s\n", atual->nomeSolicitante);
+                printf("Tipo de solicitante: %s\n", atual->tipoSolicitante);
+                printf("Quantidade de páginas: %d\n", atual->quantidadePaginas);
+                printf("Data do pedido: %s\n", atual->dataPedido);
+                printf("Valor total: R$ %.2f\n", atual->valorTotal);
+                printf("Status: %s\n", atual->status);
+                encontrado = 1;
+                break;
+            }
+            atual = atual->proximo;
+        }
+    } else {
+        while(atual != NULL){
+            char nomeSolicitanteLower[50], entradaLower[50];
+
+            strcpy(nomeSolicitanteLower, atual->nomeSolicitante);
+            strcpy(entradaLower, entrada);
+
+            for(int j = 0; nomeSolicitanteLower[j]; j++){
+                nomeSolicitanteLower[j] = tolower(nomeSolicitanteLower[j]);
+            }
+            for(int j = 0; entradaLower[j]; j++){
+                entradaLower[j] = tolower(entradaLower[j]);
+            }
+            
+            if (strstr(nomeSolicitanteLower, entradaLower) != NULL) {
+                            printf("\nPedido #%d\n", atual->numero);
+                            printf("Solicitante: %s\n", atual->nomeSolicitante);
+                            printf("Tipo de solicitante: %s\n", atual->tipoSolicitante);
+                            printf("Quantidade de páginas: %d\n", atual->quantidadePaginas);
+                            printf("Data do pedido: %s\n", atual->dataPedido);
+                            printf("Valor total: R$ %.2f\n", atual->valorTotal);
+                            printf("Status: %s\n", atual->status);
+                            encontrado = 1;
+            }
+            atual = atual->proximo;
+        }
+    }
+    if(!encontrado){
+        printf("Nenhum pedido encontrado!\n");
+    }
+}
