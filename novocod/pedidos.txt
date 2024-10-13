@@ -15,10 +15,10 @@ Data do pedido: 13/10/2024
 Status do pedido: Concluído
 -----------------------------------
 Numero do pedido: 3
-Nome do solicitante: celia
-Tipo de solicitante: Professor
-Quantidade de páginas: 51
-Valor total: 4.59
+Nome do solicitante: laura
+Tipo de solicitante: Funcionário
+Quantidade de páginas: 8500
+Valor total: 765.00
 Data do pedido: 13/10/2024
 Status do pedido: Pendente
 -----------------------------------

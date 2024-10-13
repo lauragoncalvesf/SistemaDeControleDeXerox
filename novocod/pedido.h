@@ -68,3 +68,6 @@ void buscarPedido(Pedido * lista);
 
 // Função para consultar pedidos por status
 void consultarPedidoPorStatus(Pedido * lista);
+
+// Função para consultar total de copias realizadas e o valor arrecado 
+void consultarTotalCopiasValor(Pedido *lista);

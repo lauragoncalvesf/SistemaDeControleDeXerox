@@ -483,3 +483,22 @@ void consultarPedidoPorStatus(Pedido * lista){
         printf("Nenhum pedido com status %s encontrado.\n", status);
     }
 }
+
+void consultarTotalCopiasValor(Pedido *lista){
+    if(lista == NULL){
+        printf("Nenhum pedido registrado!\n");
+        return;
+    }
+
+    int totalCopias = 0;
+    float totalValor = 0;
+    Pedido * atual = lista;
+
+    while(atual != NULL){
+        totalCopias += atual->quantidadePaginas;
+        totalValor += atual->valorTotal;
+        atual = atual->proximo;
+    }
+    printf("\nTotal de cópias: %d\n", totalCopias);
+    printf("Valor arrecadado: R$ %.2f\n", totalValor);
+}
