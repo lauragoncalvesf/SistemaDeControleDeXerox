@@ -40,7 +40,7 @@ void obterTipoSolicitante(Pedido *pedido);
 void obterQuantidadePaginas(int *quantidade);
 
 // Função para obter o novo status do pedido
-void obterNovoStatus(char *status);
+void Status(char *status);
 
 // Função para salvar pedidos no arquivo
 void salvarPedidoNoArquivo(Pedido* lista, const char* nomeArquivo);
@@ -65,3 +65,6 @@ void editarPedido(Pedido *lista);
 
 // Função para buscar pedido por número ou nome
 void buscarPedido(Pedido * lista);
+
+// Função para consultar pedidos por status
+void consultarPedidoPorStatus(Pedido * lista);

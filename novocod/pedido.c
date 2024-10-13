@@ -111,7 +111,7 @@ void obterQuantidadePaginas(int *quantidade) {
     }
 }
 
-void obterNovoStatus(char *status) {
+void Status(char *status) {
     int escolha = 0;
     char entrada[3]; // Para capturar o Enter ou uma escolha
 
@@ -375,7 +375,7 @@ void editarPedido(Pedido *lista) {
                 obterQuantidadePaginas(&atual->quantidadePaginas);
                 break;
             case 2:
-                obterNovoStatus(atual->status); // Atualiza o status do pedido
+                Status(atual->status); // Atualiza o status do pedido
                 break;
             case 3:
                 printf("Saindo da edição.\n");
@@ -449,5 +449,37 @@ void buscarPedido(Pedido * lista){
     }
     if(!encontrado){
         printf("Nenhum pedido encontrado!\n");
+    }
+}
+
+void consultarPedidoPorStatus(Pedido * lista){
+    if(lista == NULL){
+        printf("Nenhum pedido registrado!\n");
+        return;
+    }
+
+    char status[15];
+    int encontrado = 0;
+    Pedido * atual = lista;
+
+    Status(status);
+
+    printf("\n---- | Pedidos com status %s | ----\n", status);
+
+    while(atual != NULL){
+        if (strcasecmp(atual->status, status) == 0){
+            printf("\nPedido #%d\n", atual->numero);
+            printf("Solicitante: %s\n", atual->nomeSolicitante);
+            printf("Tipo de solicitante: %s\n", atual->tipoSolicitante);
+            printf("Quantidade de páginas: %d\n", atual->quantidadePaginas);
+            printf("Data do pedido: %s\n", atual->dataPedido);
+            printf("Valor total: R$ %.2f\n", atual->valorTotal);
+            printf("Status: %s\n", atual->status);
+            encontrado = 1;
+        }
+        atual = atual->proximo;
+    }
+    if (!encontrado){
+        printf("Nenhum pedido com status %s encontrado.\n", status);
     }
 }

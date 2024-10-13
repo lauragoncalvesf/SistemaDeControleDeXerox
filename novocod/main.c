@@ -41,6 +41,9 @@ int main(){
             case 5:
                 buscarPedido(listaPedidos);
                 break;
+            case 6: 
+                consultarPedidoPorStatus(listaPedidos);
+                break;
             case 8:
                 salvarPedidoNoArquivo(listaPedidos, nomeArquivo);
                 printf("Saindo...\n");
